@@ -1,7 +1,29 @@
-import {AttackTypes} from "./attack-types";
+import {AttackTypes, attackTypesDescriptionMap} from "./attack-types";
 import {baseAF} from "./base-attacks";
 import {dragonTalon} from "./skills/dragon-talon";
 import {strafe} from "./skills/strafe";
+import {zeal} from "./skills/zeal";
+
+function calc(
+    attackType: AttackTypes,
+    gias: number,
+    sias: number,
+    wsm: number,
+) {
+    switch(attackType) {
+        case AttackTypes.SMITE:
+            return [baseAF(12, gias, sias, wsm)];
+
+        case AttackTypes.PALADIN_ZEAL:
+            return zeal(gias, sias, wsm);
+
+        case AttackTypes.DRAGON_TALON:
+            return dragonTalon(gias, sias, wsm);
+
+        case AttackTypes.STRAFE:
+            return strafe(gias, sias, wsm);
+    }
+}
 
 export function calcAndFormat(
     attackType: AttackTypes,
@@ -21,14 +43,7 @@ export function calcAndFormat(
     const sias = parseInt(srcSias);
     const wsm = parseInt(srcWsm);
 
-    switch(attackType) {
-        case AttackTypes.SMITE:
-            return `Smite frames: ${baseAF(12, gias, sias, wsm)}`;
+    const textValue = calc(attackType, gias, sias, wsm)?.join('/');
 
-        case AttackTypes.DRAGON_TALON:
-            return `Dragon talon frames: ${dragonTalon(gias, sias, wsm).join('/')}`;
-
-        case AttackTypes.STRAFE:
-            return `Amazon Strafe frames: ${strafe(gias, sias, wsm).join('/')}`;
-    }
+    return `${attackTypesDescriptionMap[attackType]} frames: ${textValue}`;
 }

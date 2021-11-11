@@ -20,11 +20,3 @@ export function rollbackAF(
 ) {
     return baseAF(animLength, gias, sias, wsm) + 1;
 }
-
-// function zeal(gias, sias, wsm) {
-//     return [
-//         rollbackAF( 7, gias, sias, wsm ),
-//         baseAF( 15, gias, sias, wsm ).result,
-//     ];
-// }
-//

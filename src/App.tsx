@@ -6,7 +6,7 @@ import styled from "styled-components";
 import {FormPaper} from "styled/form-paper";
 import {OutputField, StyledField} from "styled/field";
 import {StyledSelect} from "styled/select";
-import {AttackTypes} from "./calcs/attack-types";
+import {AttackTypes, attackTypesList} from "./calcs/attack-types";
 import {calcAndFormat} from "./calcs/calc-and-format";
 
 const AppWrapper = styled.div`
@@ -43,10 +43,7 @@ const wsmMenuItems = makeMenuItems([
     '30',
 ])
 
-const attackTypeMenuItems = makeMenuItems([
-    {value: AttackTypes.SMITE, label: 'Paladin - Smite'},
-    {value: AttackTypes.DRAGON_TALON, label: 'Assassin - DTalon'},
-] as Array<{value: AttackTypes, label: string}>);
+const attackTypeMenuItems = makeMenuItems(attackTypesList);
 
 interface InputData {
     gias: string;
