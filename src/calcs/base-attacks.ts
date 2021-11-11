@@ -28,10 +28,3 @@ export function rollbackAF(
 //     ];
 // }
 //
-// function strafe(gias, sias, wsm) {
-//     return [
-//         baseAF(7, gias, sias, wsm).result,
-//         rollbackAF(3, gias, sias, wsm),
-//         baseAF(11, gias, sias, wsm).result,
-//     ]
-// }

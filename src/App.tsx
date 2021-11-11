@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import '@fontsource/roboto';
-import {Box, FormControl, InputLabel, MenuItem, SelectChangeEvent} from "@mui/material";
+import {Box, FormControl, InputLabel, MenuItem, SelectChangeEvent, Typography} from "@mui/material";
 
 import styled from "styled-components";
 import {FormPaper} from "styled/form-paper";
@@ -121,6 +121,10 @@ function App() {
 
     return (
         <AppWrapper>
+            <Typography variant={'h3'}>
+                Uncapped IAS Calculator
+            </Typography>
+
             <FormPaper elevation={12}>
                 <Box
                     component="form"
@@ -148,7 +152,7 @@ function App() {
                     </FormControl>
 
                     <FormControl>
-                        <InputLabel id="wsm-label">WSM</InputLabel>
+                        <InputLabel id="wsm-label">Weapon Speed</InputLabel>
                         <StyledSelect
                             labelId="wsm-label"
                             value={inputDataState.wsm}

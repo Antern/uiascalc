@@ -1,6 +1,7 @@
 import {AttackTypes} from "./attack-types";
 import {baseAF} from "./base-attacks";
 import {dragonTalon} from "./skills/dragon-talon";
+import {strafe} from "./skills/strafe";
 
 export function calcAndFormat(
     attackType: AttackTypes,
@@ -26,5 +27,8 @@ export function calcAndFormat(
 
         case AttackTypes.DRAGON_TALON:
             return `Dragon talon frames: ${dragonTalon(gias, sias, wsm).join('/')}`;
+
+        case AttackTypes.STRAFE:
+            return `Amazon Strafe frames: ${strafe(gias, sias, wsm).join('/')}`;
     }
 }
