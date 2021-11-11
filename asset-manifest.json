@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/uiascalc/static/css/main.f62368a5.chunk.css",
-    "main.js": "/uiascalc/static/js/main.bad08818.chunk.js",
-    "main.js.map": "/uiascalc/static/js/main.bad08818.chunk.js.map",
+    "main.js": "/uiascalc/static/js/main.e9f56080.chunk.js",
+    "main.js.map": "/uiascalc/static/js/main.e9f56080.chunk.js.map",
     "runtime-main.js": "/uiascalc/static/js/runtime-main.1cc4ee48.js",
     "runtime-main.js.map": "/uiascalc/static/js/runtime-main.1cc4ee48.js.map",
     "static/css/2.b06e5cf2.chunk.css": "/uiascalc/static/css/2.b06e5cf2.chunk.css",
-    "static/js/2.cfb83388.chunk.js": "/uiascalc/static/js/2.cfb83388.chunk.js",
-    "static/js/2.cfb83388.chunk.js.map": "/uiascalc/static/js/2.cfb83388.chunk.js.map",
+    "static/js/2.fec90c3f.chunk.js": "/uiascalc/static/js/2.fec90c3f.chunk.js",
+    "static/js/2.fec90c3f.chunk.js.map": "/uiascalc/static/js/2.fec90c3f.chunk.js.map",
     "index.html": "/uiascalc/index.html",
     "static/css/2.b06e5cf2.chunk.css.map": "/uiascalc/static/css/2.b06e5cf2.chunk.css.map",
     "static/css/main.f62368a5.chunk.css.map": "/uiascalc/static/css/main.f62368a5.chunk.css.map",
-    "static/js/2.cfb83388.chunk.js.LICENSE.txt": "/uiascalc/static/js/2.cfb83388.chunk.js.LICENSE.txt",
+    "static/js/2.fec90c3f.chunk.js.LICENSE.txt": "/uiascalc/static/js/2.fec90c3f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/uiascalc/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.1cc4ee48.js",
     "static/css/2.b06e5cf2.chunk.css",
-    "static/js/2.cfb83388.chunk.js",
+    "static/js/2.fec90c3f.chunk.js",
     "static/css/main.f62368a5.chunk.css",
-    "static/js/main.bad08818.chunk.js"
+    "static/js/main.e9f56080.chunk.js"
   ]
 }
