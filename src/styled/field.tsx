@@ -5,5 +5,4 @@ export const StyledField = matStyled(TextField)({
 });
 
 export const OutputField = matStyled(StyledField)({
-   width: '390px',
 });

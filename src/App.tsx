@@ -8,12 +8,27 @@ import {OutputField, StyledField} from "styled/field";
 import {StyledSelect} from "styled/select";
 import {AttackTypes, attackTypesList} from "./calcs/attack-types";
 import {calcAndFormat} from "./calcs/calc-and-format";
+import {FormFieldsLayout} from "./styled/form-fields-layout";
 
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 24px;
+  row-gap: 24px;
+`;
+
+const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+  justify-content: center;
+`
+
+const ColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   row-gap: 12px;
+  min-width: calc(390px + 48px);
 `;
 
 const makeMenuItems = (srcArray: Array<string | { label: string; value: any; }>) => {
@@ -118,68 +133,84 @@ function App() {
 
     return (
         <AppWrapper>
-            <Typography variant={'h3'}>
-                Uncapped IAS Calculator
-            </Typography>
+            <RowWrapper>
+                <Typography variant={'h3'}>
+                    Uncapped IAS Calculator
+                </Typography>
+            </RowWrapper>
 
-            <FormPaper elevation={12}>
-                <Box
-                    component="form"
-                    noValidate
-                    autoComplete="off"
-                >
-                    <FormControl>
-                        <StyledField
-                            label="Items IAS"
-                            variant="outlined"
-                            type={'number'}
-                            onChange={handleChange('gias')}
-                            value={inputDataState.gias}
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <StyledField
-                            label="Skills IAS"
-                            variant="outlined"
-                            type={'number'}
-                            onChange={handleChange('sias')}
-                            value={inputDataState.sias}
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <InputLabel id="wsm-label">Weapon Speed</InputLabel>
-                        <StyledSelect
-                            labelId="wsm-label"
-                            value={inputDataState.wsm}
-                            label="Weapon Speed"
-                            onChange={handleSelectChange('wsm')}
+            <RowWrapper>
+                <ColumnWrapper>
+                    <FormPaper elevation={12}>
+                        <Box
+                            component="form"
+                            noValidate
+                            autoComplete="off"
                         >
-                            {wsmMenuItems}
-                        </StyledSelect>
-                    </FormControl>
+                            <FormFieldsLayout>
+                                <FormControl>
+                                    <StyledField
+                                        label="Items IAS"
+                                        variant="outlined"
+                                        type={'number'}
+                                        onChange={handleChange('gias')}
+                                        value={inputDataState.gias}
+                                    />
+                                </FormControl>
 
-                    <FormControl>
-                        <InputLabel id="attack-type-label">Attack Type</InputLabel>
-                        <StyledSelect
-                            labelId='attack-type-label'
-                            value={inputDataState.attackType}
-                            label='Attack Type'
-                            onChange={handleSelectChange('attackType', 'attackTypes')}
-                        >
-                            {attackTypeMenuItems}
-                        </StyledSelect>
-                    </FormControl>
-                </Box>
-            </FormPaper>
+                                <FormControl>
+                                    <StyledField
+                                        label="Skills IAS"
+                                        variant="outlined"
+                                        type={'number'}
+                                        onChange={handleChange('sias')}
+                                        value={inputDataState.sias}
+                                    />
+                                </FormControl>
 
-            <FormPaper elevation={12}>
-                <OutputField
-                    placeholder={'Please fill out the form'}
-                    value={resultText ?? ''}
-                />
-            </FormPaper>
+                                <FormControl>
+                                    <InputLabel id="wsm-label">Weapon Speed</InputLabel>
+                                    <StyledSelect
+                                        labelId="wsm-label"
+                                        value={inputDataState.wsm}
+                                        label="Weapon Speed"
+                                        onChange={handleSelectChange('wsm')}
+                                    >
+                                        {wsmMenuItems}
+                                    </StyledSelect>
+                                </FormControl>
+
+                                <FormControl>
+                                    <InputLabel id="attack-type-label">Attack Type</InputLabel>
+                                    <StyledSelect
+                                        labelId='attack-type-label'
+                                        value={inputDataState.attackType}
+                                        label='Attack Type'
+                                        onChange={handleSelectChange('attackType', 'attackTypes')}
+                                    >
+                                        {attackTypeMenuItems}
+                                    </StyledSelect>
+                                </FormControl>
+                            </FormFieldsLayout>
+                        </Box>
+                    </FormPaper>
+
+                    <FormPaper elevation={12}>
+                        <FormFieldsLayout>
+                            <OutputField
+                                placeholder={'Please fill out the form'}
+                                value={resultText ?? ''}
+                            />
+                        </FormFieldsLayout>
+                    </FormPaper>
+                </ColumnWrapper>
+
+                {/*<ColumnWrapper>*/}
+                {/*    <FormPaper elevation={12}>*/}
+                {/*        Test*/}
+                {/*    </FormPaper>*/}
+                {/*</ColumnWrapper>*/}
+            </RowWrapper>
         </AppWrapper>
     );
 }
