@@ -1,4 +1,4 @@
-import {AttackTypes, attackTypesDescriptionMap} from "./attack-types";
+import {AttackTypes, attackTypesDescriptionMap} from "../types/attack-types";
 import {baseAF} from "./base-attacks";
 import {dragonTalon} from "./skills/dragon-talon";
 import {strafe} from "./skills/strafe";
@@ -30,7 +30,7 @@ export function calcAndFormat(
     srcGias: string,
     srcSias: string,
     srcWsm: string,
-) {
+): {label: string; value: string;} | null {
     const isOk = [srcSias, srcSias, srcWsm].every(
         arg => typeof arg !== 'undefined' && arg.length > 0 && !isNaN(parseInt(arg))
     ) && attackType !== null;
@@ -45,5 +45,8 @@ export function calcAndFormat(
 
     const textValue = calc(attackType, gias, sias, wsm)?.join('/');
 
-    return `${attackTypesDescriptionMap[attackType]} frames: ${textValue}`;
+    return {
+        label: attackTypesDescriptionMap[attackType],
+        value: textValue,
+    };
 }
