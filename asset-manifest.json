@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/uiascalc/static/css/main.f62368a5.chunk.css",
-    "main.js": "/uiascalc/static/js/main.4384bb88.chunk.js",
-    "main.js.map": "/uiascalc/static/js/main.4384bb88.chunk.js.map",
+    "main.js": "/uiascalc/static/js/main.3c2fb11e.chunk.js",
+    "main.js.map": "/uiascalc/static/js/main.3c2fb11e.chunk.js.map",
     "runtime-main.js": "/uiascalc/static/js/runtime-main.1cc4ee48.js",
     "runtime-main.js.map": "/uiascalc/static/js/runtime-main.1cc4ee48.js.map",
     "static/css/2.b06e5cf2.chunk.css": "/uiascalc/static/css/2.b06e5cf2.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.b06e5cf2.chunk.css",
     "static/js/2.cfb83388.chunk.js",
     "static/css/main.f62368a5.chunk.css",
-    "static/js/main.4384bb88.chunk.js"
+    "static/js/main.3c2fb11e.chunk.js"
   ]
 }
