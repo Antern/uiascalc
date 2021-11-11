@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/UIASCalc/static/css/main.f62368a5.chunk.css",
+    "main.js": "/UIASCalc/static/js/main.4384bb88.chunk.js",
+    "main.js.map": "/UIASCalc/static/js/main.4384bb88.chunk.js.map",
+    "runtime-main.js": "/UIASCalc/static/js/runtime-main.4424b0bd.js",
+    "runtime-main.js.map": "/UIASCalc/static/js/runtime-main.4424b0bd.js.map",
+    "static/css/2.d609ece8.chunk.css": "/UIASCalc/static/css/2.d609ece8.chunk.css",
+    "static/js/2.3b284697.chunk.js": "/UIASCalc/static/js/2.3b284697.chunk.js",
+    "static/js/2.3b284697.chunk.js.map": "/UIASCalc/static/js/2.3b284697.chunk.js.map",
+    "index.html": "/UIASCalc/index.html",
+    "static/css/2.d609ece8.chunk.css.map": "/UIASCalc/static/css/2.d609ece8.chunk.css.map",
+    "static/css/main.f62368a5.chunk.css.map": "/UIASCalc/static/css/main.f62368a5.chunk.css.map",
+    "static/js/2.3b284697.chunk.js.LICENSE.txt": "/UIASCalc/static/js/2.3b284697.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/UIASCalc/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4424b0bd.js",
+    "static/css/2.d609ece8.chunk.css",
+    "static/js/2.3b284697.chunk.js",
+    "static/css/main.f62368a5.chunk.css",
+    "static/js/main.4384bb88.chunk.js"
+  ]
+}
