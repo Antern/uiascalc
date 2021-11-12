@@ -30,6 +30,9 @@ function calc(
         case AttackTypes.SORC_ATTACK_2h_AXE:
             return [baseAF(16, gias, sias, wsm)];
 
+        case AttackTypes.SORC_ATTACK_XBOW:
+            return [baseAF(20, gias, sias, wsm)];
+
         case AttackTypes.ROGUE_ATTACK:
             return [baseAF(15, gias, sias, wsm)];
 
