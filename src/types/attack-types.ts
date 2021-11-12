@@ -7,10 +7,12 @@ export enum AttackTypes {
     SORC_ATTACK_2h_SWORD = "SORC_ATTACK_2h_SWORD",
     SORC_ATTACK_2h_AXE = "SORC_ATTACK_2h_AXE",
     ROGUE_ATTACK = "ROGUE_ATTACK",
+    TOWN_GUARD_ATTACK_JAB = "TOWN_GUARD_ATTACK_JAB"
 }
 
 export const attackTypesDescriptionMap: {[key in AttackTypes] : string} = {
     [AttackTypes.ROGUE_ATTACK]: 'Rogue - attack',
+    [AttackTypes.TOWN_GUARD_ATTACK_JAB]: 'Town Guard - attack/jab',
     [AttackTypes.SORC_ATTACK_1h_SWORD_AXE]: 'Sorc - 1h Sword/Axe swing',
     [AttackTypes.SORC_ATTACK_2h_SWORD]: 'Sorc - 2h Sword swing',
     [AttackTypes.SORC_ATTACK_2h_AXE]: 'Sorc - 2h Axe swing',

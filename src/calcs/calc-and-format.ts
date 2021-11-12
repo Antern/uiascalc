@@ -1,5 +1,5 @@
 import {AttackTypes, attackTypesDescriptionMap} from "../types/attack-types";
-import {baseAF} from "./base-attacks";
+import {baseAF, rollbackAF} from "./base-attacks";
 import {dragonTalon} from "./skills/dragon-talon";
 import {strafe} from "./skills/strafe";
 import {zeal} from "./skills/zeal";
@@ -32,6 +32,12 @@ function calc(
 
         case AttackTypes.ROGUE_ATTACK:
             return [baseAF(15, gias, sias, wsm)];
+
+        case AttackTypes.TOWN_GUARD_ATTACK_JAB:
+            return [
+                baseAF(16, gias, sias, wsm),
+                rollbackAF(14, gias, sias, wsm) / 2,
+            ];
 
         default:
         case AttackTypes.SMITE:
