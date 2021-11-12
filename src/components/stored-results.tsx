@@ -39,12 +39,7 @@ export const StoredResults = () => {
 
             const tmp = storedState.items
                 .map((item) => {
-                    const result = calcAndFormat(
-                        item.attackType,
-                        item.gias,
-                        item.sias,
-                        item.wsm,
-                    );
+                    const result = calcAndFormat(item);
 
                     if (result === null) {
                         return null;

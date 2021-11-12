@@ -31,8 +31,10 @@ const wsmMenuItems = makeMenuItems([
     '-40',
     '-30',
     '-20',
+    '-15',
     '-10',
     '0',
+    '5',
     '10',
     '20',
     '30',
@@ -96,12 +98,7 @@ export const MainCalc = () => {
 
     const resultText = useMemo(
         () => {
-            return calcAndFormat(
-                inputDataState.attackType,
-                inputDataState.gias,
-                inputDataState.sias,
-                inputDataState.wsm,
-            );
+            return calcAndFormat(inputDataState);
         },
         [inputDataState],
         )

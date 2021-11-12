@@ -3,6 +3,7 @@ import {baseAF} from "./base-attacks";
 import {dragonTalon} from "./skills/dragon-talon";
 import {strafe} from "./skills/strafe";
 import {zeal} from "./skills/zeal";
+import {InputData} from "../types/input-data";
 
 function calc(
     attackType: AttackTypes,
@@ -11,9 +12,6 @@ function calc(
     wsm: number,
 ) {
     switch(attackType) {
-        case AttackTypes.SMITE:
-            return [baseAF(12, gias, sias, wsm)];
-
         case AttackTypes.PALADIN_ZEAL:
             return zeal(gias, sias, wsm);
 
@@ -22,31 +20,46 @@ function calc(
 
         case AttackTypes.STRAFE:
             return strafe(gias, sias, wsm);
+
+        case AttackTypes.SORC_ATTACK_1h_SWORD_AXE:
+            return [baseAF(18, gias, sias, wsm)];
+
+        case AttackTypes.SORC_ATTACK_2h_SWORD:
+            return [baseAF(22, gias, sias, wsm)];
+
+        case AttackTypes.SORC_ATTACK_2h_AXE:
+            return [baseAF(16, gias, sias, wsm)];
+
+        case AttackTypes.ROGUE_ATTACK:
+            return [baseAF(15, gias, sias, wsm)];
+
+        default:
+        case AttackTypes.SMITE:
+            return [baseAF(12, gias, sias, wsm)];
     }
 }
 
-export function calcAndFormat(
-    attackType: AttackTypes,
-    srcGias: string,
-    srcSias: string,
-    srcWsm: string,
-): {label: string; value: string;} | null {
-    const isOk = [srcSias, srcSias, srcWsm].every(
+export function calcAndFormat(inputData: InputData): {label: string; value: string;} | null {
+    const isOk = [
+        inputData.gias,
+        inputData.sias,
+        inputData.wsm,
+    ].every(
         arg => typeof arg !== 'undefined' && arg.length > 0 && !isNaN(parseInt(arg))
-    ) && attackType !== null;
+    ) && inputData.attackType !== null;
 
     if (!isOk) {
         return null;
     }
 
-    const gias = parseInt(srcGias);
-    const sias = parseInt(srcSias);
-    const wsm = parseInt(srcWsm);
+    const gias = parseInt(inputData.gias);
+    const sias = parseInt(inputData.sias);
+    const wsm = parseInt(inputData.wsm);
 
-    const textValue = calc(attackType, gias, sias, wsm)?.join('/');
+    const textValue = calc(inputData.attackType, gias, sias, wsm)?.join('/');
 
     return {
-        label: attackTypesDescriptionMap[attackType],
+        label: attackTypesDescriptionMap[inputData.attackType],
         value: textValue,
     };
 }
